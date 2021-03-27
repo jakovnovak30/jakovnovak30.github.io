@@ -117,17 +117,17 @@ async function Loop(){
       }
     }
 
-    if(y1 < 0){
+    if(y1 < 5){
       y1 = 540;
     }
-    else if(y1 > 540){
+    else if(y1 > 535){
       y1 = 0;
     }
 
-    if(x1 < 0){
+    if(x1 < 5){
       x1 = 540;
     }
-    else if(x1 > 540){
+    else if(x1 > 535){
       x1 = 0;
     }
 
@@ -135,5 +135,5 @@ async function Loop(){
   }
   displej.clear();
   displej.ispis("Gejm over!");
-  document.getElementById("demo").innerHTML = '<button onclick="startGame()"> restart </button>';
+  document.getElementById("demo").innerHTML = '<button onclick="startGame()"> Restart </button>';
 }
