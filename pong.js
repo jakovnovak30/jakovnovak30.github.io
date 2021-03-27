@@ -6,10 +6,9 @@ class Plejer{
     this.t2y = tocka2y;
   }
   nacrtaj(ekran){
-    var sredinay = (this.t1y + this.t2y)/2;
     var ctx = ekran.context;
     ctx.fillStyle = "white";
-    ctx.fillRect(this.t1x, sredinay, 10, 100);
+    ctx.fillRect(this.t1x, this.t1y, 10, 100);
   }
   dole(ekran){
     var y1 = this.t1y + 7;
