@@ -4,13 +4,22 @@ var x1 = 270;
 var y1 = 270;
 var x1_change = 0;
 var y1_change = 0;
+var foodx = Math.round((Math.random()*52) + 1)*10;
+var foody = Math.round((Math.random()*52) + 1)*10;
 
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 function startGame(){
+    document.getElementById("demo").innerHTML = "Ovo je klasicna zmija.";
     displej.start();
+    listax = [];
+    listay = [];
+    x1 = 270;
+    y1 = 270;
+    x1_change = 0;
+    y1_change = 0;
     new component(10, 10, "red", x1, y1);
     Loop();
 }
@@ -70,8 +79,7 @@ async function Loop(){
 
 
   var krepase = false;
-  var foodx = Math.round((Math.random()*52) + 1)*10;
-  var foody = Math.round((Math.random()*52) + 1)*10;
+
   while(!krepase){
     displej.clear();
 
@@ -89,6 +97,8 @@ async function Loop(){
     listay.push(y1);
 
     if(x1 == foodx && y1 == foody){
+      var ispis = "Vas skor je: " + String(duljina);
+      document.getElementById("demo").innerHTML = ispis;
       duljina++;
       foodx = Math.round((Math.random()*52) + 1)*10;
       foody = Math.round((Math.random()*52) + 1)*10;
@@ -125,4 +135,5 @@ async function Loop(){
   }
   displej.clear();
   displej.ispis("Gejm over!");
+  document.getElementById("demo").innerHTML = '<button onclick="startGame()"> restart </button>';
 }
