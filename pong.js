@@ -107,6 +107,9 @@ var displej = {
     },
     clear : function() {
       this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
+      var slika = new Image();
+      slika.src = './pong.jpeg';
+      this.context.drawImage(slika, 0, 0);
     },
     ispis : function(str){
       this.context.font = "30px Arial";
