@@ -11,8 +11,8 @@ class Plejer{
     ctx.fillRect(this.t1x, this.t1y, 10, 100);
   }
   dole(ekran){
-    var y1 = this.t1y + 7;
-    var y2 = this.t2y + 7;
+    var y1 = this.t1y + 20;
+    var y2 = this.t2y + 20;
 
     if(this.t2y <= 500){
       this.t1y = y1;
@@ -23,8 +23,8 @@ class Plejer{
   }
 
   gore(ekran){
-    var y1 = this.t1y - 7;
-    var y2 = this.t2y - 7;
+    var y1 = this.t1y - 20;
+    var y2 = this.t2y - 20;
 
     if(y1 >= 0){
       this.t1y = y1;
