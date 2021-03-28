@@ -190,23 +190,26 @@ function izbrisi(okvir, red){
 
   for(i=0;i<blocks.length-1;i++){
       var noviy = [];
+      var novix = [];
       for(j=0;j<blocks[i].kx.length;j++){
-        if(blocks[i].ky[j] >= red-10 && blocks[i].ky[j] <= red+10) ctx.fillRect(blocks[i].kx[j], blocks[i].ky[j], 20, 20);
+        if(blocks[i].ky[j] >= red-10 && blocks[i].ky[j] < red+10) ctx.fillRect(blocks[i].kx[j], blocks[i].ky[j], 20, 20);
         else{
           if(blocks[i].ky[j] < red+10){
+            novix.push(blocks[i].kx[j]);
             noviy.push(blocks[i].ky[j]+20);
             ctx.fillRect(blocks[i].kx[j], blocks[i].ky[j], 20, 20);
           }
           else{
             ctx.fillRect(blocks[i].kx[j], blocks[i].ky[j], 20, 20);
             noviy.push(blocks[i].ky[j]);
+            novix.push(blocks[i].kx[j]);
           }
         }
       }
+      blocks[i].kx = novix;
       blocks[i].ky = noviy;
-      if(noviy.length == 0) delete blocks[i];
+  //    if(noviy.length == 0) delete b;
     }
-
   for(i=0;i<blocks.length-1;i++){
       blocks[i].nacrtaj(okvir);
     }
@@ -228,8 +231,6 @@ function provjeri(okvir, red){
       }
     }
 
-
-    document.getElementById("test").innerHTML = String(brojac);
     if(brojac == 20) return true;
 
     return false;
@@ -328,11 +329,11 @@ async function Loop(){
         */
 
 
-        i = 90
+        var i = 90;
         while(i < 700){
           if(provjeri(displej, i)){
             skor = skor + 100;
-            document.getElementById("test").innerHTML = 'Trebal bi brisati red. Skor: ' + String(skor);
+            document.getElementById("test").innerHTML = 'Trebal bi brisati red.' + String(i) + 'Skor: ' + String(skor);
             izbrisi(displej, i);
           }
           i += 20;
