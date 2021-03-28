@@ -153,7 +153,7 @@ async function Loop(){
         if(igrac1.t1y <= loptica.y && igrac1.t2y >= loptica.y){
             var odsredine = Math.min(Math.abs(loptica.y - igrac1.t2y), Math.abs(loptica.y - igrac1.t1y));
             var kut = Math.atan((8+Math.abs(loptica.brzinav))/(odsredine+Math.abs(loptica.brzinah)));
-            var brzina = Math.sqrt(Math.pow(loptica.brzinah, 2) + Math.pow(loptica.brzinav, 2)) * 1.3;
+            var brzina = Math.sqrt(Math.pow(loptica.brzinah, 2) + Math.pow(loptica.brzinav, 2)) * 1.1;
 
             loptica.brzinah = brzina*Math.cos(kut);
 
@@ -164,7 +164,7 @@ async function Loop(){
         if(igrac2.t1y <= loptica.y && igrac2.t2y >= loptica.y){
             var odsredine = Math.min(Math.abs(loptica.y - igrac2.t2y), Math.abs(loptica.y - igrac2.t1y));
             var kut = Math.atan((8+Math.abs(loptica.brzinav))/(odsredine+Math.abs(loptica.brzinah)));
-            var brzina = Math.sqrt(Math.pow(loptica.brzinah, 2) + Math.pow(loptica.brzinav, 2)) * 1.3;
+            var brzina = Math.sqrt(Math.pow(loptica.brzinah, 2) + Math.pow(loptica.brzinav, 2)) * 1.1;
 
             loptica.brzinah = -1*brzina*Math.cos(kut);
 
