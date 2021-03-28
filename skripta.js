@@ -12,7 +12,7 @@ function sleep(ms) {
 }
 
 function startGame(){
-    document.getElementById("demo").innerHTML = "Ovo je klasicna zmija.";
+    document.getElementById("demo").innerHTML = "Ovo je zmija.";
     displej.start();
     listax = [];
     listay = [];
@@ -135,5 +135,9 @@ async function Loop(){
   }
   displej.clear();
   displej.ispis("Gejm over!");
-  document.getElementById("demo").innerHTML = '<button onclick="startGame()"> Restart </button>';
+  var gumb1 = '<button onclick="startGame()"> Restart </button>';
+  var gumb2 = '<button onclick="window.location.href=';
+  gumb2 += "'index.html'";
+  gumb2 += '"> Quit </button>';
+  document.getElementById("demo").innerHTML = gumb1 + gumb2;
 }
