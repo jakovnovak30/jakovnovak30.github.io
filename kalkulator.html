@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Bolji je od windows kalkulatora </title>
+  <style>
+    button{
+      text-align: center;
+      font-size: 50px;
+      width: 60px;
+      height: 60px;
+    }
+    table{
+      margin: auto;
+    }
+    p.prvi{
+      margin-left: 25vw;
+      margin-right: 25vw;
+      border-radius: 100px;
+      border: 1px solid black;
+      text-align: center;
+      font-size: 50px;
+    }
+    p.drugi{
+      text-align: center;
+      font-size: 30px;
+    }
+  </style>
+</head>
+
+<body onload=init()>
+  <script src="kalkulator.js">
+  </script>
+  <table>
+    <tr> <p id="izraz" class="prvi"> </p> </tr>
+    <tr> <td> <button onclick="klir()"> C </button> </td>  <td> <button onclick="dodaj('+')"> + </button> </td> <td> <button onclick="dodaj('*')"> * </button> </td> <td> <button onclick="dodaj('/')"> / </button> </td> <td> <button onclick="window.location.href='./index.html'"> H </button> </td> </tr>
+    <tr> <td> <button onclick="dodaj('7')"> 7 </button> </td>  <td> <button onclick="dodaj('8')"> 8 </button> </td> <td> <button onclick="dodaj('9')"> 9 </button> </td> <td> <button onclick="dodaj('-')"> - </button> </td> <td> <button onclick="dodaj('0')"> 0 </button> </td>  </tr>
+    <tr> <td> <button onclick="dodaj('4')"> 4 </button> </td>  <td> <button onclick="dodaj('5')"> 5 </button> </td> <td> <button onclick="dodaj('6')"> 6 </button> </td> <td> <button onclick="dodaj('.')"> . </button> </td> <td> <button onclick="window.location.href='./index.html'"> M </button> </td>  </tr>
+    <tr> <td> <button onclick="dodaj('1')"> 1 </button> </td>  <td> <button onclick="dodaj('2')"> 2 </button> </td> <td> <button onclick="dodaj('3')"> 3 </button> </td> <td> <button onclick="resi()"> = </button> </td> <td> <button onclick="window.location.href='./index.html'"> E </button> </td>  </tr>
+  </table>
+  <p class="drugi"> Za veću preciznost možete i tipkovnicu koristiti. </p>
+
+</body>
