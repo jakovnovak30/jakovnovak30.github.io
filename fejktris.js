@@ -80,7 +80,7 @@ class Blok{
         for(i=0;i<blocks.length-1;i++){
           for(j=0;j<blocks[i].kx.length;j++){
             for(k=0;k<novix.length;k++){
-              if(blocks[i].kx[j] == novix[k] && this.ky[k] >= blocks[i].ky[j]-20 && this.ky[k] <= blocks[i].ky[j]+20) return;
+              if(blocks[i].kx[j] == novix[k] && this.ky[k]+40 >= blocks[i].ky[j]) return;
             }
           }
         }
@@ -104,7 +104,7 @@ class Blok{
         for(i=0;i<blocks.length-1;i++){
           for(j=0;j<blocks[i].kx.length;j++){
             for(k=0;k<novix.length;k++){
-              if(blocks[i].kx[j] == novix[k] && this.ky[k] >= blocks[i].ky[j]-20 && this.ky[k] <= blocks[i].ky[j]+20) return;
+              if(blocks[i].kx[j] == novix[k] && this.ky[k]+40 >= blocks[i].ky[j]) return;
             }
           }
         }
@@ -329,7 +329,7 @@ async function Loop(){
         */
 
 
-        var i = 90;
+        var i = 80;
         while(i < 700){
           if(provjeri(displej, i)){
             skor = skor + 100;
