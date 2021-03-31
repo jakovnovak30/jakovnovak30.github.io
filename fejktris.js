@@ -258,10 +258,15 @@ async function Loop(){
         blocks[trenutni].desno(displej);
         break;
       default:
-        brzina = 100;
         return; // Quit when this doesn't handle the key event.
     }
   }, true);
+
+  addEventListener('keyup', function(){
+      brzina = 100;
+      return;
+  });
+
 
   while(traje){
     if(!pada){
