@@ -1,4 +1,5 @@
 var blocks = [];
+var kvadrat = false;
 
 class Blok{
     constructor(color, x1, y1, x2, y2, x3, y3, x4, y4){
@@ -241,7 +242,7 @@ async function Loop(){
         brzina = 20;
         break;
       case "ArrowUp":
-        blocks[trenutni].rotiraj(displej);
+        if(!kvadrat) blocks[trenutni].rotiraj(displej);
         break;
       case "ArrowLeft":
         blocks[trenutni].levo(displej);
@@ -268,36 +269,43 @@ async function Loop(){
           let prvi = new Blok(color, 200,100, 180,100, 220,100, 200, 80);
           traje = prvi.spawn(displej);
           blocks.push(prvi);
+          kvadrat = false;
         }
         else if(novi == 1){
           let prvi = new Blok(color, 140,100, 160,100, 180,100, 200, 100);
           traje = prvi.spawn(displej);
           blocks.push(prvi);
+          kvadrat = false;
         }
         else if(novi == 2){
           let prvi = new Blok(color,200,100, 200,80, 220,100, 240, 100);
           traje = prvi.spawn(displej);
           blocks.push(prvi);
+          kvadrat = false;
         }
         else if(novi == 3){
           let prvi = new Blok(color, 200,100, 220,100, 240,100, 240, 80);
           traje = prvi.spawn(displej);
           blocks.push(prvi);
+          kvadrat = false;
         }
         else if(novi == 4){
           let prvi = new Blok(color, 200,100, 200,80, 220,100, 220, 80);
           traje = prvi.spawn(displej);
           blocks.push(prvi);
+          kvadrat = true;
         }
         else if(novi == 5){
           let prvi = new Blok(color, 180,100, 200,100, 200,80, 220, 80);
           traje = prvi.spawn(displej);
           blocks.push(prvi);
+          kvadrat = false;
         }
         else if(novi == 6){
           let prvi = new Blok(color, 280,80, 300,80, 300,100, 320, 100);
           traje = prvi.spawn(displej);
           blocks.push(prvi);
+          kvadrat = false;
         }
         /*
         preview sledeceg
