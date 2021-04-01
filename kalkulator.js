@@ -20,7 +20,7 @@ function zadnji(){
 }
 
 function resi(){
-  izraz = math.evaluate(izraz);
+  izraz = String(math.evaluate(izraz));
 
   if(izraz.length == 0 || izraz == ""){
     document.getElementById("izraz").innerHTML = "Math Error";
