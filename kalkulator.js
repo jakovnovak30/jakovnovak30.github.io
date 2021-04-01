@@ -1,4 +1,5 @@
 var izraz = "";
+var kju = [];
 
 function init(){
   document.getElementById("izraz").innerHTML = "Ovdje upisite racunske operacije";
@@ -9,47 +10,25 @@ function dodaj(x){
   document.getElementById("izraz").innerHTML = izraz;
 }
 
+function zadnji(){
+  if(izraz.length > 0) izraz = izraz.substr(0, izraz.length-1);
+  document.getElementById("izraz").innerHTML = izraz;
+
+  if(izraz.length == 0) init();
+
+  return;
+}
+
 function resi(){
-  var prvi, drugi;
-  var operacija;
+  izraz = math.evaluate(izraz);
 
-  var i;
-  for(i=0;i<izraz.length;i++){
-    if(izraz.charAt(i) == '+' || izraz.charAt(i) == '-' || izraz.charAt(i) == '*' || izraz.charAt(i) == '/'){
-        prvi = izraz.substr(0, i);
-        drugi = izraz.substr(i+1, izraz.length);
-        operacija = izraz.charAt(i);
-
-        var testni = "prvi: " + prvi + " drugi: " + drugi + " operacija: " + operacija;
-
-        break;
-    }
-  }
-
-  var resenje = "";
-
-  switch(operacija){
-    case "+":
-      resenje = String(parseFloat(prvi) + parseFloat(drugi));
-      break;
-    case "-":
-      resenje = String(parseFloat(prvi) - parseFloat(drugi));
-      break;
-    case "*":
-      resenje = String(parseFloat(prvi) * parseFloat(drugi));
-      break;
-    case "/":
-      resenje = String(parseFloat(prvi) / parseFloat(drugi));
-      break;
-  }
-
-  if(resenje.length == 0 || resenje == ""){
+  if(izraz.length == 0 || izraz == ""){
     document.getElementById("izraz").innerHTML = "Math Error";
     return;
   }
-  izraz = resenje;
-  document.getElementById("izraz").innerHTML = izraz;
 
+  document.getElementById("izraz").innerHTML = izraz;
+  return;
 }
 
 function klir(){
@@ -106,12 +85,18 @@ addEventListener("keydown", function (event){
     case ".":
       dodaj('.');
       break;
+    case "(":
+      dodaj('(');
+      break;
+    case ")":
+      dodaj(')');
+      break;
     default:
       break;
   }
   switch(event.code){
     case "Backspace":
-      klir();
+      zadnji();
       break;
     case "Enter":
       resi();

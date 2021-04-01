@@ -28,14 +28,15 @@
 </head>
 
 <body onload=init()>
+  <script src="https://unpkg.com/mathjs@9.3.0/lib/browser/math.js"> </script>  
   <script src="kalkulator.js">
   </script>
+  <p id="izraz" class="prvi"> </p>
   <table>
-    <tr> <p id="izraz" class="prvi"> </p> </tr>
-    <tr> <td> <button onclick="klir()"> C </button> </td>  <td> <button onclick="dodaj('+')"> + </button> </td> <td> <button onclick="dodaj('*')"> * </button> </td> <td> <button onclick="dodaj('/')"> / </button> </td> <td> <button onclick="window.location.href='./index.html'"> H </button> </td> </tr>
+    <tr> <td> <button onclick="klir()"> C </button> </td>  <td> <button onclick="dodaj('+')"> + </button> </td> <td> <button onclick="dodaj('*')"> * </button> </td> <td> <button onclick="dodaj('/')"> / </button> </td> <td> <button onclick="zadnji()"> <- </button> </td> </tr>
     <tr> <td> <button onclick="dodaj('7')"> 7 </button> </td>  <td> <button onclick="dodaj('8')"> 8 </button> </td> <td> <button onclick="dodaj('9')"> 9 </button> </td> <td> <button onclick="dodaj('-')"> - </button> </td> <td> <button onclick="dodaj('0')"> 0 </button> </td>  </tr>
-    <tr> <td> <button onclick="dodaj('4')"> 4 </button> </td>  <td> <button onclick="dodaj('5')"> 5 </button> </td> <td> <button onclick="dodaj('6')"> 6 </button> </td> <td> <button onclick="dodaj('.')"> . </button> </td> <td> <button onclick="window.location.href='./index.html'"> M </button> </td>  </tr>
-    <tr> <td> <button onclick="dodaj('1')"> 1 </button> </td>  <td> <button onclick="dodaj('2')"> 2 </button> </td> <td> <button onclick="dodaj('3')"> 3 </button> </td> <td> <button onclick="resi()"> = </button> </td> <td> <button onclick="window.location.href='./index.html'"> E </button> </td>  </tr>
+    <tr> <td> <button onclick="dodaj('4')"> 4 </button> </td>  <td> <button onclick="dodaj('5')"> 5 </button> </td> <td> <button onclick="dodaj('6')"> 6 </button> </td> <td> <button onclick="dodaj('.')"> . </button> </td> <td> <button onclick="dodaj('(')"> ( </button> </td>  </tr>
+    <tr> <td> <button onclick="dodaj('1')"> 1 </button> </td>  <td> <button onclick="dodaj('2')"> 2 </button> </td> <td> <button onclick="dodaj('3')"> 3 </button> </td> <td> <button onclick="resi()"> = </button> </td> <td> <button onclick="dodaj(')')"> ) </button> </td>  </tr>
   </table>
   <p class="drugi"> Za veću preciznost možete i tipkovnicu koristiti. </p>
 
