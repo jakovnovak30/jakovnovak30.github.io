@@ -354,4 +354,7 @@ async function Loop(){
 
     await sleep(brzina);
   }
+
+  displej.clear();
+  displej.ispis("Gejm over");
 }
