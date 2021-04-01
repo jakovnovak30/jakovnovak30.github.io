@@ -122,7 +122,7 @@ class Blok{
         for(i=0;i<blocks.length-1;i++){
           for(j=0;j<blocks[i].kx.length;j++){
             for(k=0;k<novix.length;k++){
-              if(novix[k] >= blocks[i].kx[j]-20 && novix[k] <= blocks[i].kx[j]+20 && noviy[k] >= blocks[i].ky[j]-20 && noviy[k] <= blocks[i].ky[j]+20) return;
+              if(novix[k] >= blocks[i].kx[j] && novix[k] <= blocks[i].kx[j]+40 && noviy[k] >= blocks[i].ky[j] && noviy[k] <= blocks[i].ky[j]+40) return;
               }
             }
           }
