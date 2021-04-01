@@ -112,7 +112,7 @@ class Blok{
             var dy = this.ky[i] - prviy;
             var x = -dy + prvix;
             var y =  dx + prviy;
-            if(x <= 0 || x >= 380 || y <= 0 || y >= 680) return;
+            if(x < 0 || x > 380 || y < 0 || y > 680) return;
 
             novix.push(x);
             noviy.push(y);
