@@ -161,6 +161,7 @@ var displej = {
     },
     ispis : function(str){
       this.context.font = "30px Arial";
+      this.context.fillStyle = "white";
       this.context.fillText(str, 10, 50);
     }
 }
@@ -337,7 +338,6 @@ async function Loop(){
         while(i < 700){
           if(provjeri(displej, i)){
             skor = skor + 100;
-            document.getElementById("test").innerHTML = 'Trebal bi brisati red.' + String(i) + 'Skor: ' + String(skor);
             izbrisi(displej, i);
           }
           i += 20;
@@ -351,6 +351,7 @@ async function Loop(){
     pada = blocks[trenutni].padni(displej);
 
     nacrtaj(displej);
+    displej.ispis("Skor: " + skor);
 
     await sleep(brzina);
   }
